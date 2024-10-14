@@ -5,8 +5,15 @@ async function getNightcrawler(marvelname){
 }
 
 document.addEventListener('DOMContentLoaded', async ()=>{
-    const nightcrawlerdata = getNightcrawler('nightcrawler')
+    const nightcrawlerdata = await getNightcrawler('nightcrawler')
     const NcElement = document.getElementById("character")
     NcElement.innerHTML = `
-    <h2>${nightcrawlerdata.data.results[0].name}</h2>`
+    <h2>${nightcrawlerdata.data.results[0].name}</h2>
+    <img src = ${nightcrawlerdata.data.results[0].thumbnail.path}.jpg>
+    <h3>Issues featuring Nightcrawler</h3>
+    <ul>
+        <li>${nightcrawlerdata.data.results[0].comics.items[0].name}</li>
+        <li>${nightcrawlerdata.data.results[0].comics.items[1].name}</li>
+        <li>${nightcrawlerdata.data.results[0].comics.items[2].name}</li>
+    </ul>`
 })
