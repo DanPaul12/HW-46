@@ -20,8 +20,33 @@ document.addEventListener('DOMContentLoaded', async ()=>{
 
 //------------------------------------------------------------------------------
 
-for (let i = 10; i > 0; i--){
-    setInterval(function(){
-        console.log(`Countdown: ${i}`)
-    }, 1000)
-}
+let counter = 10
+
+const timefunc = setInterval(function(){
+    timer = document.getElementById("timer")
+    counter--
+    timer.innerHTML = `Time: ${counter}`
+    if (counter === 0){
+        timer.innerHTML = `Time's up!`
+        clearInterval(timefunc)
+    }
+},1000)
+
+/* ^^^ Could you show me how I should have used setTimeout here instead? */
+
+setTimeout(function(){
+    alert('Whatcha doin')
+}, 5000)
+
+let notif = setInterval(function(){
+    let sign = prompt("Should I be dismissed?");
+        if (sign.toLowerCase() === "yes") {
+            clearInterval(notif)
+        }
+    }, 6000)
+
+/* ^^^ Did I do this right? I wasn't sure what it meant to make it stop after user dismisses notification*/
+
+
+
+
