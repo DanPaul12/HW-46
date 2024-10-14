@@ -17,3 +17,11 @@ document.addEventListener('DOMContentLoaded', async ()=>{
         <li>${nightcrawlerdata.data.results[0].comics.items[2].name}</li>
     </ul>`
 })
+
+//------------------------------------------------------------------------------
+
+for (let i = 10; i > 0; i--){
+    setInterval(function(){
+        console.log(`Countdown: ${i}`)
+    }, 1000)
+}
